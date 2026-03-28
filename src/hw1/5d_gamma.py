@@ -24,7 +24,7 @@ gamma_list = [0.4, 1.0, 2.5]
 transformed_results = [gamma_transformation(original_img, g) for g in gamma_list]
 
 # 4. 可视化： 4行2列
-plt.figure(figsize=(20, 10))
+plt.figure(figsize=(16, 9))
 
 # 循环绘制3组伽马变换结果（索引正常，无越界）
 for idx, (gamma, img) in enumerate(zip(gamma_list, transformed_results)):
