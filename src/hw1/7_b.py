@@ -21,6 +21,8 @@ nums = [1, 2, 5, 10, 25, 50, 100]
 # ====================== Visualization ======================
 plt.figure(figsize=(16, 9))
 
+n_std = []
+
 for i, num in enumerate(nums):
     plt.subplot(2, 4, i + 1)
     img = np.mean(imgs[:num], axis=0)
@@ -38,10 +40,16 @@ for i, num in enumerate(nums):
     )
     plt.plot(x, y, color="red", label="Normal Fit")
 
+    n_std.append((num, std))
+
     plt.hist(img.ravel(), bins=256, range=(0, 255), color="gray")
     plt.title(f"average {num}, {mean=:.2f}, {std=:.2f}")
     plt.xlabel("Gray Level (0-255)")
     plt.ylabel("Pixel Count")
+
+plt.subplot(2, 4, 8)
+plt.axis("equal")
+plt.plot([np.log(n) for n, _ in n_std], [np.log(std) for _, std in n_std], marker="o")
 
 plt.tight_layout()
 plt.show()
