@@ -31,3 +31,7 @@ uv run python src/hw1/5a_gaussian_noise.py
 - Code comments are in Chinese (assignment language)
 - No tests, no linting, no CI — this is a coursework repo
 - `main.py` is a uv template placeholder, not the real entrypoint
+
+## Version Control
+
+- This repo uses `jj` (Jujutsu), not Git. Use `jj` commands instead of `git`.
